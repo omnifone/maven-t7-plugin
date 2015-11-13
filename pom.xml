@@ -22,9 +22,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/omnifone/maven-t7-plugin</url>
-        <connection>scm:git:https://github.com/omnifone/maven-t7-plugin.git</connection>
-        <developerConnection>scm:git:https://github.com/omnifone/maven-t7-plugin.git</developerConnection>
+        <connection>scm:git:ssh://github.com/omnifone/maven-t7-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/omnifone/maven-t7-plugin.git</developerConnection>
+        <url>http://github.com/omnifone/maven-t7-plugin</url>
       <tag>HEAD</tag>
   </scm>
 
