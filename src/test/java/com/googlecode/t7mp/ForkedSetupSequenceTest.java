@@ -28,6 +28,7 @@ import com.googlecode.t7mp.steps.ConfigFilesSequence;
 import com.googlecode.t7mp.steps.Context;
 import com.googlecode.t7mp.steps.CopyConfigResourcesFromClasspathSequence;
 import com.googlecode.t7mp.steps.DefaultContext;
+import com.googlecode.t7mp.steps.DeleteDefaultWebappsSequence;
 import com.googlecode.t7mp.steps.ResolveTomcatStep;
 import com.googlecode.t7mp.steps.Step;
 import com.googlecode.t7mp.steps.WebappSequence;
@@ -37,18 +38,20 @@ public class ForkedSetupSequenceTest {
     @Test
     public void testForkedSetupSequence() {
         TestForkedSetupSequence sequence = new TestForkedSetupSequence();
-        Assert.assertEquals("6 Steps expected", 6, sequence.getSteps().size());
-        Step two = sequence.getSteps().get(0);
-        Assert.assertTrue(two instanceof CheckT7ArtifactsStep);
-        Step three = sequence.getSteps().get(1);
-        Assert.assertTrue(three instanceof ResolveTomcatStep);
-        Step four = sequence.getSteps().get(2);
+        Assert.assertEquals("7 Steps expected", 7, sequence.getSteps().size());
+        Step one = sequence.getSteps().get(0);
+        Assert.assertTrue(one instanceof CheckT7ArtifactsStep);
+        Step two = sequence.getSteps().get(1);
+        Assert.assertTrue(two instanceof ResolveTomcatStep);
+        Step three = sequence.getSteps().get(2);
+        Assert.assertTrue(three instanceof DeleteDefaultWebappsSequence);
+        Step four = sequence.getSteps().get(3);
         Assert.assertTrue(four instanceof CopyConfigResourcesFromClasspathSequence);
-        Step five = sequence.getSteps().get(3);
+        Step five = sequence.getSteps().get(4);
         Assert.assertTrue(five instanceof ConfigFilesSequence);
-        Step six = sequence.getSteps().get(4);
+        Step six = sequence.getSteps().get(5);
         Assert.assertTrue(six instanceof ArtifactDeploymentSequence);
-        Step seven = sequence.getSteps().get(5);
+        Step seven = sequence.getSteps().get(6);
         Assert.assertTrue(seven instanceof WebappSequence);
 
         //        AbstractT7BaseMojo mojo = Mockito.mock(AbstractT7BaseMojo.class);
