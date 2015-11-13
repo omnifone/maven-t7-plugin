@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>4</version>
+        <groupId>com.omnifone.platform.maven.release</groupId>
+        <artifactId>release-parent</artifactId>
+        <version>1.0.0</version>
     </parent>
     <groupId>com.googlecode.t7mp</groupId>
     <artifactId>maven-t7-plugin</artifactId>
@@ -11,7 +11,7 @@
     <packaging>maven-plugin</packaging>
     <name>maven-t7-plugin</name>
     <description>Tomcat 7 Maven Plugin</description>
-    <url>https://github.com/t7mp</url>
+    <url>https://github.com/omnifone/maven-t7-plugin</url>
 
     <licenses>
         <license>
@@ -22,15 +22,15 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/t7mp/maven-t7-plugin</url>
-        <connection>scm:git:https://github.com/t7mp/maven-t7-plugin.git</connection>
-        <developerConnection>scm:git:https://github.com/t7mp/maven-t7-plugin.git</developerConnection>
+        <url>https://github.com/omnifone/maven-t7-plugin</url>
+        <connection>scm:git:https://github.com/omnifone/maven-t7-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/omnifone/maven-t7-plugin.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
     <issueManagement>
         <system>GitHub Issue Tracking</system>
-        <url>https://github.com/t7mp/t7mp/issues</url>
+        <url>https://github.com/omnifone/maven-t7-plugin/issues</url>
     </issueManagement>
 
     <developers>
@@ -516,46 +516,4 @@
             </build>
         </profile>
     </profiles>
-
-    <repositories>
-        <repository>
-            <id>com.springsource.repository.maven.milestone</id>
-            <url>http://maven.springframework.org/milestone/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>apache-snapshots</id>
-            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <checksumPolicy>IGNORE</checksumPolicy>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>powermock-repo</id>
-            <url>http://powermock.googlecode.com/svn/repo/</url>
-        </repository>
-        <repository>
-            <id>codehaus.snapshots</id>
-            <url>http://snapshots.repository.codehaus.org/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <site>
-            <id>local.site</id>
-            <url>file:///${user.home}/maven/sites/${project.groupId}-${project.version}</url>
-        </site>
-    </distributionManagement>
 </project>
