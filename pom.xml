@@ -7,7 +7,7 @@
     </parent>
     <groupId>com.googlecode.t7mp</groupId>
     <artifactId>maven-t7-plugin</artifactId>
-    <version>0.9.19-SNAPSHOT</version>
+    <version>0.9.19</version>
     <packaging>maven-plugin</packaging>
     <name>maven-t7-plugin</name>
     <description>Tomcat 7 Maven Plugin</description>
@@ -25,7 +25,7 @@
         <connection>scm:git:ssh://github.com/omnifone/maven-t7-plugin.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/omnifone/maven-t7-plugin.git</developerConnection>
         <url>http://github.com/omnifone/maven-t7-plugin</url>
-      <tag>HEAD</tag>
+      <tag>0.9.19</tag>
   </scm>
 
     <issueManagement>
