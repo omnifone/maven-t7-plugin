@@ -261,6 +261,13 @@ public abstract class AbstractT7BaseMojo extends AbstractMojo {
 
     /**
      * 
+     * @parameter default-value="${basedir}/src/test/resources/tomcat.properties"
+     * @readonly
+     */
+    protected File systemPropertiesFile;
+
+    /**
+     * 
      * @parameter
      */
     protected ArrayList<JarArtifact> libs = new ArrayList<JarArtifact>();
@@ -493,6 +500,14 @@ public abstract class AbstractT7BaseMojo extends AbstractMojo {
 
     public void setSystemProperties(Map<String, String> systemProperties) {
         this.systemProperties = systemProperties;
+    }
+
+    public File getSystemPropertiesFile() {
+        return systemPropertiesFile;
+    }
+
+    public void setSystemPropertiesFile(File systemPropertiesFile) {
+        this.systemPropertiesFile = systemPropertiesFile;
     }
 
     public ArtifactFactory getFactory() {

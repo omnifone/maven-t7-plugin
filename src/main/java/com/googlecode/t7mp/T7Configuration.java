@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.googlecode.t7mp.scanner.ScannerConfiguration;
+import java.util.Properties;
 
 /**
  *
@@ -77,6 +78,8 @@ public interface T7Configuration {
     List<WebappArtifact> getWebapps();
 
     Map<String, String> getSystemProperties();
+    
+    File getSystemPropertiesFile();
 
     List<JarArtifact> getLibs();
 

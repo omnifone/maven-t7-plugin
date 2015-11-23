@@ -149,6 +149,11 @@ public class BaseConfiguration implements T7Configuration {
     /**
      * @parameter
      */
+    protected File systemPropertiesFile = null;
+
+    /**
+     * @parameter
+     */
     protected List<JarArtifact> libs = new ArrayList<JarArtifact>();
 
     /**
@@ -463,6 +468,18 @@ public class BaseConfiguration implements T7Configuration {
 
     public void setSystemProperties(final Map<String, String> systemProperties) {
         this.systemProperties = systemProperties;
+    }
+
+    /* (non-Javadoc)
+     * @see com.googlecode.t7mp.PluginConfiguration#getSystemPropertiesFile()
+     */
+    @Override
+    public File getSystemPropertiesFile() {
+        return systemPropertiesFile;
+    }
+
+    public void setSystemPropertiesFile(final File systemPropertiesFile) {
+        this.systemPropertiesFile = systemPropertiesFile;
     }
 
     /* (non-Javadoc)
