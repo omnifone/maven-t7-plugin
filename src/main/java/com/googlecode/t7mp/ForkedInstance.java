@@ -69,14 +69,24 @@ public class ForkedInstance implements Runnable {
 
         processBuilder.environment().putAll(configuration.getSystemProperties());
         if (configuration.getSystemPropertiesFile() != null) {
+            
             Reader propReader = null;
             try {
                 propReader = new FileReader(configuration.getSystemPropertiesFile());
                 Properties sysProp = new Properties();
                 sysProp.load(propReader);
-                for (Object name : sysProp.keySet()) {
-                    processBuilder.environment().put(name.toString(), sysProp.get(name).toString());
+                
+                String javaOpts = processBuilder.environment().get("JAVA_OPTS");
+                StringBuilder newJavaOpts;
+                if (javaOpts == null) {
+                    newJavaOpts = new StringBuilder();
+                } else {
+                    newJavaOpts = new StringBuilder(javaOpts);
                 }
+                for (Object propName : sysProp.keySet()) {
+                    newJavaOpts.append(" -D").append(propName).append("=").append(sysProp.get(propName));
+                }
+                processBuilder.environment().put("JAVA_OPTS", newJavaOpts.toString());
             } catch (IOException ex) {
             } finally {
                 if (propReader != null) {
